@@ -11,7 +11,7 @@ import { PainelPage } from '../pages/painel/painel';
 })
 export class MyApp {
   @ViewChild(Nav) public ir: Nav;
-  rootPage:any = LoginPage;
+  rootPage:any = LoginPage.name;
 
   public paginas = [ 
     {titulo: 'Login', nomePagina: LoginPage.name, icone:'calendar' }
@@ -25,7 +25,8 @@ export class MyApp {
   }
 
   irParaPagina(nomePagina){
-    alert(nomePagina);
+    //alert(nomePagina);
+    this.ir.push(nomePagina);
   }
 }
 

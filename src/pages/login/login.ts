@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, IonicPage } from 'ionic-angular';
 import { Login } from '../../models/login';
 import { AcessoLoginProvider } from '../../providers/acesso-login/acesso-login';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { PainelPage } from '../painel/painel';
-
+@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -23,6 +23,7 @@ export class LoginPage {
   }
 
   autenticando(){
+    this.navCtrl.setRoot(PainelPage);
     if(!this.username){
       this._alertCtrl.create({
         title: 'Preenchimento obrigatório',

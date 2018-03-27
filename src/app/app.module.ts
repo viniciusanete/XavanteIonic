@@ -13,7 +13,6 @@ import { PainelPage } from '../pages/painel/painel';
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
     PainelPage
   ],
   imports: [
@@ -24,7 +23,6 @@ import { PainelPage } from '../pages/painel/painel';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage,
     PainelPage
   ],
   providers: [
