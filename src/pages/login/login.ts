@@ -3,14 +3,15 @@ import { NavController, AlertController, LoadingController } from 'ionic-angular
 import { Login } from '../../models/login';
 import { AcessoLoginProvider } from '../../providers/acesso-login/acesso-login';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
+import { PainelPage } from '../painel/painel';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  public usuario: Login;
-  public senha: Login;
+  public username: Login;
+  public password: Login;
 
   constructor(public navCtrl: NavController, 
     private _loadingCtrl: LoadingController,
@@ -22,7 +23,7 @@ export class LoginPage {
   }
 
   autenticando(){
-    if(!this.usuario){
+    if(!this.username){
       this._alertCtrl.create({
         title: 'Preenchimento obrigatório',
         subTitle: 'Preencha o campo de usuário!',
@@ -33,7 +34,7 @@ export class LoginPage {
 
       return;
 
-    }else if (!this.senha){
+    }else if (!this.password){
       this._alertCtrl.create({
         title: 'Preenchimento obrigatório',
         subTitle: 'Preencha o campo de senha!',
@@ -52,8 +53,8 @@ export class LoginPage {
     loading.present();
 
     let dadosLogin = JSON.stringify({
-      username: this.usuario,
-      password: this.senha
+      username: this.username,
+      password: this.password
     });
 
     let titulo = '';
@@ -63,8 +64,7 @@ export class LoginPage {
     .subscribe(
       (sucess => {
         loading.dismiss();
-        alert('Sucesso');
-        //this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(PainelPage);
       }), (err => {
         loading.dismiss();
         if(err.status == 0 || err.status == 500){

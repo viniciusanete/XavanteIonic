@@ -8,11 +8,13 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { HttpClientModule } from '@angular/common/http';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
+import { PainelPage } from '../pages/painel/painel';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage
+    LoginPage,
+    PainelPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage
+    LoginPage,
+    PainelPage
   ],
   providers: [
     StatusBar,
