@@ -14,7 +14,7 @@ export class MyApp {
   rootPage:any = LoginPage.name;
 
   public paginas = [ 
-    {titulo: 'Login', nomePagina: LoginPage.name, icone:'calendar' }
+    {titulo: 'Sair', nomePagina: LoginPage.name, icone:'return-left' }
   ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -25,7 +25,10 @@ export class MyApp {
   }
 
   irParaPagina(nomePagina){
-    //alert(nomePagina);
+    if(nomePagina == 'LoginPage'){
+      this.ir.setRoot(nomePagina);  
+      return;
+    }
     this.ir.push(nomePagina);
   }
 }
