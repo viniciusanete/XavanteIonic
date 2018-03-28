@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
 import { PainelPage } from '../pages/painel/painel';
 
+import "rxjs/add/operator/do";
+
 @NgModule({
   declarations: [
     MyApp,

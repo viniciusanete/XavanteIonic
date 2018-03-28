@@ -1,17 +1,16 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Login
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding class="background-color">
-  <div id="container" class="align-Form">
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Sistema de Controle
+    </div>
+  </div>
+  <div padding>
     <form (ngSubmit)="autenticando()">
       <ion-row ion-list>
         <ion-item>
-          <ion-label color="primary" stacked><ion-icon name="contact"></ion-icon> Usuário</ion-label>
+          <ion-label color="primary" stacked><ion-icon name="username"></ion-icon> Usuário</ion-label>
           <ion-input [(ngModel)]="username" name="username" type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -20,7 +19,7 @@
         </ion-item>
       </ion-row>
       <div class="button-container" text-center>
-        <button ion-button block>Entrar</button>
+        <button ion-button block class="login">Entrar</button>
         <button ion-button padding small>Esqueci minha senha</button>
       </div>
     </form>
