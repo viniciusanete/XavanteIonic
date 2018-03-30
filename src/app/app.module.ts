@@ -12,6 +12,7 @@ import { PainelPage } from '../pages/painel/painel';
 
 import "rxjs/add/operator/do";
 
+
 @NgModule({
   declarations: [
     MyApp,

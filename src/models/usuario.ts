@@ -1,6 +1,7 @@
 export interface Usuario {
+    email: string,
     id: number,
-    usuario: string,
-    token: string,
-    perfil: number
+    name: string,
+    perfil: string, 
+    token: string
 }

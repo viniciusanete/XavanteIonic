@@ -23,7 +23,6 @@ export class LoginPage {
   }
 
   autenticando(){
-    this.navCtrl.setRoot(PainelPage);
     if(!this.username){
       this._alertCtrl.create({
         title: 'Preenchimento obrigatório',
@@ -85,6 +84,6 @@ export class LoginPage {
         }).present();
 
       })
-    );
+    );   
   }
 }

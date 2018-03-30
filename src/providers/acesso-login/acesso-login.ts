@@ -2,14 +2,14 @@ import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RequestOptions } from "@angular/http";
 import { Usuario } from '../../models/usuario';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AcessoLoginProvider {
   
  private _url ='http://localhost:8080/';
- private _idUsuario : Usuario;
- private _tokenLogado: Usuario;
- 
+ private _dadosUsuarios : Usuario;
+
   constructor(public _http: HttpClient) {
 
   }
@@ -20,10 +20,17 @@ export class AcessoLoginProvider {
     {
       headers: { 'Content-Type': 'application/json' }
     }
-  ).do((id : Usuario) => this._idUsuario = id,
-        (token: Usuario) => this._tokenLogado = token
+   ).do(
+        id => this._dadosUsuarios = id,
       );
   
   }
 
+  public retornaUsuarioLogado(){
+     return this._dadosUsuarios;
+  }
+
+  logoutUsuario(){
+     // this._dadosUsuarios = null;
+  }
 }
