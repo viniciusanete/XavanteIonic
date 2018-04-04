@@ -9,8 +9,10 @@ import { LoginPage } from '../pages/login/login';
 import { HttpClientModule } from '@angular/common/http';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
 import { PainelPage } from '../pages/painel/painel';
+import { ListaUsuariosPage } from '../pages/lista-usuarios/lista-usuarios';
 
 import "rxjs/add/operator/do";
+
 
 
 @NgModule({

@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { PainelPage } from '../pages/painel/painel';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
+import { CadastroUsuarioPage } from '../pages/cadastro-usuario/cadastro-usuario';
+import { ListaUsuariosPage } from '../pages/lista-usuarios/lista-usuarios';
 @Component({
   selector: 'myapp',
   templateUrl: 'app.html'
@@ -15,6 +17,7 @@ export class MyApp {
   rootPage:any = LoginPage.name;
 
   public paginas = [ 
+    {titulo: 'Lista de Usuários', nomePagina: ListaUsuariosPage.name, icone:'person' },
     {titulo: 'Sair', nomePagina: LoginPage.name, icone:'return-left' }
   ];
 
@@ -36,6 +39,7 @@ export class MyApp {
       console.log(this._AcessoLogin.retornaUsuarioLogado());
       return;
     }
+
     this.ir.push(nomePagina);
   }
 
