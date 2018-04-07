@@ -10,8 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
 import { PainelPage } from '../pages/painel/painel';
 import { ListaUsuariosPage } from '../pages/lista-usuarios/lista-usuarios';
+import { UrlServerProvider } from '../providers/url-server/url-server';
 
 import "rxjs/add/operator/do";
+
 
 
 
@@ -34,7 +36,8 @@ import "rxjs/add/operator/do";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AcessoLoginProvider
+    AcessoLoginProvider,
+    UrlServerProvider
   ]
 })
 export class AppModule {}

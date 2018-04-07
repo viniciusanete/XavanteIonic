@@ -3,18 +3,20 @@ import { Injectable } from '@angular/core';
 import { RequestOptions } from "@angular/http";
 import { Usuario } from '../../models/usuario';
 import { Observable } from 'rxjs/Observable';
+import { UrlServerProvider } from '../url-server/url-server';
 
 @Injectable()
 export class AcessoLoginProvider {
-  
- private _url ='http://localhost:8080/';
+
+  private _url = this._Url.urlServer();
+ //private _url ='http://localhost:8080/';
  private _dadosUsuarios : Usuario;
 
-  constructor(public _http: HttpClient) {
-
+  constructor(public _http: HttpClient, private _Url: UrlServerProvider) {
+    
   }
-
-
+  
+  
   login(dadosLogin){
     return this._http.post<Usuario>(this._url+'login/auth', (dadosLogin),
     {
