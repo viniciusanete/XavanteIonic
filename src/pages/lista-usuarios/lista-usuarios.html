@@ -7,33 +7,17 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let usuario of usuarios">
       <ion-thumbnail item-start>
         <img src="assets/imgs/avatar-profile.png">
       </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
+      <h2>{{ usuario.name }}</h2>
+      <p>{{ usuario.email }}</p>
       <button ion-button clear item-end>View</button>
     </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/avatar-profile.png">
-      </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item><ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/avatar-profile.png">
-      </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
-
   </ion-list>
   <ion-fab bottom right >
-    <button ion-fab>
+    <button ion-fab (click)="CriarUsuario()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>

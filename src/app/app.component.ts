@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { PainelPage } from '../pages/painel/painel';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
-import { CadastroUsuarioPage } from '../pages/cadastro-usuario/cadastro-usuario';
+//import { CadastroUsuarioPage } from '../pages/cadastro-usuario/cadastro-usuario';
 import { ListaUsuariosPage } from '../pages/lista-usuarios/lista-usuarios';
 @Component({
   selector: 'myapp',
