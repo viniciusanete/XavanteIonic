@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Novo Usuário</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="autenticando()">
+    <ion-row ion-list>
+      <ion-item>
+          <ion-label color="primary" stacked>Nome</ion-label>
+          <ion-input [(ngModel)]="name" name="name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" stacked>E-mail</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="text"></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label color="primary" stacked> Usuário</ion-label>
+        <ion-input [(ngModel)]="username" name="username" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Senha</ion-label>
+        <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+      </ion-item>
+    </ion-row>
+  </form>
+</ion-content>

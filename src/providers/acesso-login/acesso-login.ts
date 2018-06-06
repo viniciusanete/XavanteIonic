@@ -9,7 +9,6 @@ import { UrlServerProvider } from '../url-server/url-server';
 export class AcessoLoginProvider {
 
   private _url = this._Url.urlServer();
- //private _url ='http://localhost:8080/';
  private _dadosUsuarios : Usuario;
 
   constructor(public _http: HttpClient, private _Url: UrlServerProvider) {

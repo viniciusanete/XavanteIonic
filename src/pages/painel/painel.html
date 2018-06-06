@@ -1,20 +1,29 @@
-
-
-
-
 <ion-header>
-
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Painel Principal</ion-title>
   </ion-navbar>
-
 </ion-header>
+<ion-content padding class="card-background-page">
 
+ <ion-card (click)="irParaPagina('temperatura')">
+    <img src="assets/imgs/temperatura.jpg"/>
+    <div class="card-title">Temperatura</div>
+  </ion-card>
+   <ion-card>
+    <img src="assets/imgs/agua.jpg"/>
+    <div class="card-title">pH</div>
+  </ion-card>
+   <ion-card>
+    <img src="assets/imgs/sal.jpg"/>
+    <div class="card-title">Salinidade</div>
+  </ion-card>
+   <ion-card>
+    <img src="assets/imgs/amonia.jpg"/>
+    <div class="card-title">Amonia</div>
+  </ion-card>
 
-
-<ion-content padding>
 
 </ion-content>
