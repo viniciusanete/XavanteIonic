@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
 import { PainelPage } from '../pages/painel/painel';
 import { ListaUsuariosPage } from '../pages/lista-usuarios/lista-usuarios';
-import { TemperaturaPage } from '../pages/temperatura/temperatura';
+import { TemperaturaPage } from '../pages/temperatura/temperatura';
 import { UrlServerProvider } from '../providers/url-server/url-server';
 import 'rxjs/add/operator/finally';
 import 'rxjs/add/operator/do';
