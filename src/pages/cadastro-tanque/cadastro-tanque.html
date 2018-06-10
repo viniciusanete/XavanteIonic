@@ -1,0 +1,29 @@
+<!--
+  Generated template for the CadastroTanquePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Novo Tanque</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="salvando()">
+    <ion-row ion-list>
+      <ion-item>
+          <ion-label color="primary" stacked>Nome de referência: *</ion-label>
+          <ion-input [(ngModel)]="name" name="name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" stacked>Capacidade: </ion-label>
+          <ion-input [(ngModel)]="capacity" name="capacity" type="number"></ion-input>
+      </ion-item> 
+      <div class="button-container" text-center>
+        <button ion-button block class="login">Salvar</button>
+      </div>
+    </ion-row>
+  </form>
+</ion-content>

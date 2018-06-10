@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CadastrarUsuarioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,12 +7,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'cadastrar-usuario.html',
 })
 export class CadastrarUsuarioPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public name: string;
+  public email: string;
+  public username: string;
+  public password: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private _loadingCtrl: LoadingController) {
   }
+  
+  salvando(){
+    let loading = this._loadingCtrl.create({
+      content: 'Validando dados, aguarde...'
+    });
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastrarUsuarioPage');
+    loading.present();
+
+    let dadosLogin = JSON.stringify({
+      username: this.username,
+      password: this.password
+    });
   }
 
 }
