@@ -19,7 +19,7 @@ export class MyApp {
   public verificaLogado:boolean = false;
   public paginas = [ 
     //{titulo: 'Home',nomePagina: 'PainelPage', icon: 'home'},
-    {titulo: 'Novo Tanque', nomePagina: 'CadastroTanquePage', icone:'person' },
+    {titulo: 'Novo Tanque', nomePagina: 'CadastroTanquePage', icone:'beaker' },
     {titulo: 'Lista de Usuários', nomePagina: ListaUsuariosPage.name, icone:'person' },
     {titulo: 'Sair', nomePagina: LoginPage.name, icone:'return-left' }
   ];

@@ -11,6 +11,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+    
   <form (ngSubmit)="salvando()">
     <ion-row ion-list>
       <ion-item>
@@ -23,6 +24,7 @@
       </ion-item> 
       <div class="button-container" text-center>
         <button ion-button block class="login">Salvar</button>
+        <button ion-button navPop>Cancelar</button>
       </div>
     </ion-row>
   </form>

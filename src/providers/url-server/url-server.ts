@@ -8,8 +8,8 @@ export class UrlServerProvider {
   }
 
   urlServer(){
-  return 'http://localhost:8080/';
-	//return 'http://192.168.0.107:8080/';
+  //return 'http://localhost:8080/';
+	return 'http://192.168.0.107:8080/';
 
   }
 }

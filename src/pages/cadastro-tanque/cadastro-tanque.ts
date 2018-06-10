@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Tanque } from '../../models/tanque';
 import { TanqueServiceProvider } from '../../providers/tanque-service/tanque-service';
+import { PainelPage } from '../painel/painel';
 @IonicPage()
 @Component({
   selector: 'page-cadastro-tanque',
@@ -54,7 +55,12 @@ export class CadastroTanquePage {
                   title: 'Sucesso',
                   subTitle: 'O tanque foi cadastrado com sucesso.',
                   buttons: [
-                    { text: 'Ok' }
+                    { 
+                      text: 'Ok' ,
+                      handler: () => {
+                        this.navCtrl.setRoot(PainelPage);
+                      }
+                    }
                   ]
                 }).present();
               }), (err => {
