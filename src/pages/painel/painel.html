@@ -7,11 +7,14 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding class="card-background-page">
+  
 
- <ion-card (click)="irParaPagina('temperatura')">
+  <ion-card *ngFor="let dadosTanque of TanqueDisponivel">
     <img src="assets/imgs/temperatura.jpg"/>
-    <div class="card-title">Temperatura</div>
+    <div class="card-title">{{dadosTanque.name}}</div>
   </ion-card>
+
+
    <ion-card>
     <img src="assets/imgs/agua.jpg"/>
     <div class="card-title">pH</div>

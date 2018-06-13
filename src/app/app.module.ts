@@ -20,6 +20,7 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/of';
 import { ListaUsuariosProvider } from '../providers/lista-usuarios/lista-usuarios';
 import { TanqueServiceProvider } from '../providers/tanque-service/tanque-service';
+import { ListaTanqueProvider } from '../providers/lista-tanque/lista-tanque';
 
 
 
@@ -46,7 +47,8 @@ import { TanqueServiceProvider } from '../providers/tanque-service/tanque-servic
     AcessoLoginProvider,
     UrlServerProvider,
     ListaUsuariosProvider,
-    TanqueServiceProvider
+    TanqueServiceProvider,
+    ListaTanqueProvider
   ]
 })
 export class AppModule {}
