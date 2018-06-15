@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UrlServerProvider } from '../url-server/url-server';
+import { Tanque } from '../../models/tanque';
 
 @Injectable()
 export class ListaTanqueProvider {
@@ -9,12 +10,7 @@ export class ListaTanqueProvider {
   }
 
   listaTanque(){
-    return this._http.get(this._Url+"/auth/tanque/tanques")
-    .subscribe(
-     data => {
-       console.log(data);
-     }  
-    );
+    return this._http.get<Tanque[]>(this._Url+"auth/tanque/tanques");
   }
 
 }
