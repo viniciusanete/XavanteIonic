@@ -21,6 +21,7 @@ import 'rxjs/add/observable/of';
 import { ListaUsuariosProvider } from '../providers/lista-usuarios/lista-usuarios';
 import { TanqueServiceProvider } from '../providers/tanque-service/tanque-service';
 import { ListaTanqueProvider } from '../providers/lista-tanque/lista-tanque';
+import { ListaMedicaoProvider } from '../providers/lista-medicao/lista-medicao';
 
 
 
@@ -48,7 +49,8 @@ import { ListaTanqueProvider } from '../providers/lista-tanque/lista-tanque';
     UrlServerProvider,
     ListaUsuariosProvider,
     TanqueServiceProvider,
-    ListaTanqueProvider
+    ListaTanqueProvider,
+    ListaMedicaoProvider
   ]
 })
 export class AppModule {}

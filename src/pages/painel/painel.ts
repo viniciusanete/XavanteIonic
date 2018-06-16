@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TemperaturaPage } from '../temperatura/temperatura';
 import { ListaTanqueProvider } from '../../providers/lista-tanque/lista-tanque';
 import { Tanque } from '../../models/tanque';
+import { ListaMedicaoPage } from '../lista-medicao/lista-medicao';
 
 @IonicPage()
 @Component({
@@ -36,6 +37,9 @@ export class PainelPage {
     }
 
     paginaTanque(id){
-      alert(id);
+      this.navCtrl.push(ListaMedicaoPage.name,
+      {
+        idTanque: id
+      });
     }
 }
