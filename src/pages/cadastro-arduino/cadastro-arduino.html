@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro de Arduino</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="salvando()">
+    <ion-row ion-list>
+      <ion-item>
+          <ion-label color="primary" stacked>Nome de referência: </ion-label>
+          <ion-input [(ngModel)]="Codigo" name="codigo" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" stacked>Tipo</ion-label>
+          <ion-select [(ngModel)]="Tipo" name="Tipo">
+            <ion-option value="0">PH</ion-option>
+            <ion-option value="1">CLARIDADE</ion-option>
+            <ion-option value="2">SALINIDADE</ion-option>
+          </ion-select>        
+      </ion-item> 
+      <ion-item>
+          <ion-label color="primary" stacked>Tanque</ion-label>
+          <ion-select [(ngModel)]="Tanque" name="Tanque">
+            <ion-option *ngFor="let dadosTanque of tanqueDisponiveis" value="{{dadosTanque.id}}">{{dadosTanque.name}}</ion-option>
+          </ion-select>        
+      </ion-item> 
+      <div class="button-container" text-center>
+        <button ion-button block class="login">Salvar</button>
+        <button ion-button navPop>Cancelar</button>
+      </div>
+    </ion-row>
+  </form>
+</ion-content>

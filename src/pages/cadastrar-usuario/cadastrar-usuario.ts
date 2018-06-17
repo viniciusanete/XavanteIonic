@@ -23,9 +23,13 @@ export class CadastrarUsuarioPage {
     loading.present();
 
     let dadosLogin = JSON.stringify({
+      name: this.name,
+      email: this.email,
       username: this.username,
       password: this.password
     });
+
+    console.log(dadosLogin);
   }
 
 }

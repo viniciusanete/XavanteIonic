@@ -1,8 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Medições</ion-title>
+    <div style="float: left;margin-left: 10px; color: #4169E1; " (click)="fecharModal()">Voltar</div>
+    <ion-title style="margin-left: -10px;">Medições</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-
+    <ion-grid>
+        <ion-row style="background-color:#4169E1; color: #FFF;">
+          <ion-col>Tipo</ion-col>
+          <ion-col>Medição</ion-col>
+          <ion-col>Data</ion-col>
+        </ion-row>
+        <div *ngFor="let item of lista">
+          <ion-row>
+            <ion-col>{{ item.qtde }}</ion-col>
+            <ion-col>{{ item.perc }}</ion-col>
+            <ion-col>{{ item.valor }}</ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+    
 </ion-content>

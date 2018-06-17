@@ -3,14 +3,18 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Painel Principal</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding class="card-background-page">
-  
-
-  <ion-card *ngFor="let dadosTanque of tanqueDisponiveis">
-    <img src="assets/imgs/temperatura.jpg" (click)="paginaTanque(dadosTanque.id)"/>
-    <div class="card-title">{{dadosTanque.name}}</div>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header style="background-color: #4169E1; color: #FFF;">
+      Selecione um tanque:
+    </ion-card-header>    
+    <ion-list>
+      <button ion-item *ngFor="let dadosTanque of tanqueDisponiveis" (click)="paginaTanque(dadosTanque.id)">
+          {{dadosTanque.name}}
+      </button>
+    </ion-list>
   </ion-card>
 </ion-content>

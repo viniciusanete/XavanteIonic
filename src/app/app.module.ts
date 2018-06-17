@@ -22,6 +22,7 @@ import { ListaUsuariosProvider } from '../providers/lista-usuarios/lista-usuario
 import { TanqueServiceProvider } from '../providers/tanque-service/tanque-service';
 import { ListaTanqueProvider } from '../providers/lista-tanque/lista-tanque';
 import { ListaMedicaoProvider } from '../providers/lista-medicao/lista-medicao';
+import { ArduiboProvider } from '../providers/arduibo/arduibo';
 
 
 
@@ -50,7 +51,8 @@ import { ListaMedicaoProvider } from '../providers/lista-medicao/lista-medicao';
     ListaUsuariosProvider,
     TanqueServiceProvider,
     ListaTanqueProvider,
-    ListaMedicaoProvider
+    ListaMedicaoProvider,
+    ArduiboProvider
   ]
 })
 export class AppModule {}
