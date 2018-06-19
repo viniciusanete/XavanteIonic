@@ -11,6 +11,10 @@
           <ion-input [(ngModel)]="Codigo" name="codigo" type="text"></ion-input>
       </ion-item>
       <ion-item>
+          <ion-label color="primary" stacked>IP: </ion-label>
+          <ion-input [(ngModel)]="Ip" name="Ip" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
           <ion-label color="primary" stacked>Tipo</ion-label>
           <ion-select [(ngModel)]="Tipo" name="Tipo">
             <ion-option *ngFor="let tiposDisponivel of tiposDisponiveis" value="{{tiposDisponivel.id}}">{{tiposDisponivel.name}}</ion-option>

@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Navegação</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content class="card-background-page">
+      <ion-card (click)="page('ArduinoPage')">
+          <img src="assets/imgs/arduino.png"/>
+          <div class="card-title">Cadastro de Arduino</div>
+        </ion-card>
+        <ion-card (click)="page('PainelPage')">
+            <img src="assets/imgs/tanque.jpg"/>
+            <div class="card-title">Lista de Tanque</div>
+          </ion-card>
+          <ion-card (click)="page('ListaUsuariosPage')">
+              <img src="assets/imgs/agua.jpg"/>
+              <div class="card-title">Lista de Usuários</div>
+            </ion-card>
+  </ion-content>
+  

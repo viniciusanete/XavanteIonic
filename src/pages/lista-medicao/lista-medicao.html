@@ -11,13 +11,11 @@
           <ion-col>Medição</ion-col>
           <ion-col>Data</ion-col>
         </ion-row>
-        <div >
-          <ion-row *ngFor="let item of dados">
-            <ion-col>{{ item.name }}</ion-col>
-            <ion-col>{{ item.medicao.tipo }}</ion-col>
-            <ion-col>{{ item.capacity }}</ion-col>
+        <ion-row *ngFor="let info of array ">
+            <ion-col>{{ info.id }}</ion-col>
+            <ion-col>{{ info }}</ion-col>
+            <ion-col>{{ info }}</ion-col>
           </ion-row>
-        </div>
       </ion-grid>
-    
+
 </ion-content>

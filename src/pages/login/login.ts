@@ -4,6 +4,7 @@ import { Login } from '../../models/login';
 import { AcessoLoginProvider } from '../../providers/acesso-login/acesso-login';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { PainelPage } from '../painel/painel';
+import { InicioPanePage } from '../inicio-pane/inicio-pane';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -64,7 +65,7 @@ export class LoginPage {
     .subscribe(
       (sucess => {
         loading.dismiss();
-        this.navCtrl.setRoot(PainelPage);
+        this.navCtrl.setRoot(InicioPanePage.name);
       }), (err => {
         loading.dismiss();
         if(err.status == 0 || err.status == 500){

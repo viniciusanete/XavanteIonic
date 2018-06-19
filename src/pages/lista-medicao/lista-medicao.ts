@@ -4,15 +4,15 @@ import { ListaTanqueProvider } from '../../providers/lista-tanque/lista-tanque';
 import { ListaMedicaoProvider } from '../../providers/lista-medicao/lista-medicao';
 import { PainelPage } from '../painel/painel';
 import { Medicao } from '../../models/medicao';
+import { Tanque } from '../../models/tanque';
 @IonicPage()
 @Component({
   selector: 'page-lista-medicao',
   templateUrl: 'lista-medicao.html',
 })
 export class ListaMedicaoPage {
-  public dados : Array<Medicao>;
-  lista=[];
   public id: number;
+  public array: Array<Object>;
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private ListaMedicao: ListaMedicaoProvider,
      private _alertCtrl: AlertController, 
@@ -21,9 +21,11 @@ export class ListaMedicaoPage {
     }
 
   ionViewDidLoad() {
-    this.ListaMedicao.listaTanque(this.id).subscribe(
+    this.ListaMedicao.listaTanque(this.id)
+    .subscribe(
       (res) => {
-        this.dados =  Array.of(res);
+        this.array = res;
+        console.log(this.array);
     }, (err) => {
       this._alertCtrl.create({
         title: 'Erro',

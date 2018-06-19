@@ -4,6 +4,18 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+    <ion-grid>
+        <ion-row style="background-color:#4169E1; color: #FFF;">
+          <ion-col>Nome</ion-col>
+          <ion-col>Tipo</ion-col>
+          <ion-col>IP</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let info of array ">
+            <ion-col>{{ info.codigo }}</ion-col>
+            <ion-col>{{ info.tipo }}</ion-col>
+            <ion-col>{{ info.ip }}</ion-col>
+          </ion-row>
+      </ion-grid>
   <ion-fab bottom right >
     <button ion-fab (click)="CriarArduino()">
       <ion-icon name="add"></ion-icon>

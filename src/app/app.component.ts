@@ -10,6 +10,7 @@ import { AcessoLoginProvider } from '../providers/acesso-login/acesso-login';
 import { ListaUsuariosPage } from '../pages/lista-usuarios/lista-usuarios';
 import { CadastroTanquePage } from '../pages/cadastro-tanque/cadastro-tanque';
 import { ArduinoPage } from '../pages/arduino/arduino';
+import { InicioPanePage } from '../pages/inicio-pane/inicio-pane';
 @Component({
   selector: 'myapp',
   templateUrl: 'app.html'
@@ -19,6 +20,7 @@ export class MyApp {
   rootPage:any = LoginPage.name;
   public verificaLogado:boolean = false;
   public paginas = [ 
+    {titulo: 'Home',nomePagina: InicioPanePage.name, icon: 'Home'},
     {titulo: 'Arduino',nomePagina: ArduinoPage.name, icon: 'build'},
     {titulo: 'Novo Tanque', nomePagina: 'CadastroTanquePage', icone:'beaker' },
     {titulo: 'Lista de Usuários', nomePagina: ListaUsuariosPage.name, icone:'person' },

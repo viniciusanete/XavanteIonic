@@ -30,8 +30,7 @@ import { ArduiboProvider } from '../providers/arduibo/arduibo';
 
 @NgModule({
   declarations: [
-    MyApp,
-    PainelPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -40,8 +39,7 @@ import { ArduiboProvider } from '../providers/arduibo/arduibo';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    PainelPage
+    MyApp
   ],
   providers: [
     StatusBar,

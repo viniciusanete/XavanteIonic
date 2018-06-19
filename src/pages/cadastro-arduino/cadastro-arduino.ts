@@ -5,6 +5,7 @@ import { Tanque } from '../../models/tanque';
 import { Arduino } from '../../models/arduino';
 import { ArduiboProvider } from '../../providers/arduibo/arduibo';
 import { PainelPage } from '../painel/painel';
+import { InicioPanePage } from '../inicio-pane/inicio-pane';
 @IonicPage()
 @Component({
   selector: 'page-cadastro-arduino',
@@ -16,6 +17,7 @@ export class CadastroArduinoPage {
   public Codigo: Arduino;
   public Tanque: Arduino;
   public Tipo: Arduino;
+  public Ip: Arduino;
   constructor(private _Arduinoservice: ArduiboProvider, private _loadingCtrl: LoadingController,private _alertCtrl: AlertController,private _Tanque: ListaTanqueProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -91,7 +93,8 @@ export class CadastroArduinoPage {
         let dadosArduino = JSON.stringify({
           codigo: this.Codigo,
           tanque: this.Tanque,
-          tipo: this.Tipo
+          tipo: this.Tipo,
+          ip: this.Ip
         });
 
         let mensagem = '';
@@ -106,10 +109,13 @@ export class CadastroArduinoPage {
             title: titulo,
             subTitle: mensagem,
             buttons: [
-              { text: 'Ok' }
+              { text: 'Ok' ,                      handler: () => {
+                this.navCtrl.popToRoot();
+              }}
             ]
           }).present();
-        this.navCtrl.setRoot(PainelPage);
+
+          //this.navCtrl.setRoot(InicioPanePage.name);
       }), (err => {
         console.log(err);
         loading.dismiss();

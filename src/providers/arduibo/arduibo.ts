@@ -11,9 +11,13 @@ export class ArduiboProvider {
   Arduino(dadosArduino){
     let options = {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       }
     };
     return this._http.post(this._Url+"auth/arduino",(dadosArduino), (options));
+  }
+
+  lista(){
+    return this._http.get(this._Url+"auth/arduino/all");
   }
 }

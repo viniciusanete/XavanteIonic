@@ -13,7 +13,7 @@ export class TanqueServiceProvider {
     
 
   login(dadosTanque){
-    return this._http.post<Tanque>(this._url+'/auth/tanque', (dadosTanque),
+    return this._http.post<Tanque>(this._url+'auth/tanque', (dadosTanque),
     {
       headers: { 'Content-Type': 'application/json' }
     });
