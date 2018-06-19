@@ -12,15 +12,12 @@
       </ion-item>
       <ion-item>
           <ion-label color="primary" stacked>IP: </ion-label>
-          <ion-input [(ngModel)]="Ip" name="Ip" type="text"></ion-input>
+          <ion-input [(ngModel)]="ip" name="ip" type="text"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label color="primary" stacked>Tipo</ion-label>
           <ion-select [(ngModel)]="Tipo" name="Tipo">
-            <ion-option *ngFor="let tiposDisponivel of tiposDisponiveis" value="{{tiposDisponivel.id}}">{{tiposDisponivel.name}}</ion-option>
-            <ion-option value="0">PH</ion-option>
-            <ion-option value="1">CLARIDADE</ion-option>
-            <ion-option value="2">SALINIDADE</ion-option>
+            <ion-option *ngFor="let tiposDisponivel of tiposDisponiveis" value="{{tiposDisponivel.id}}">{{tiposDisponivel.tipo}}</ion-option>
           </ion-select>        
       </ion-item> 
       <ion-item>

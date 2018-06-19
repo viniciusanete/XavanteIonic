@@ -4,6 +4,7 @@ import { TemperaturaPage } from '../temperatura/temperatura';
 import { ListaTanqueProvider } from '../../providers/lista-tanque/lista-tanque';
 import { Tanque } from '../../models/tanque';
 import { ListaMedicaoPage } from '../lista-medicao/lista-medicao';
+import { CadastroTanquePage } from '../cadastro-tanque/cadastro-tanque';
 
 @IonicPage()
 @Component({
@@ -48,5 +49,9 @@ export class PainelPage {
       {
         idTanque: id
       });*/
+    }
+
+    novo(){
+      this.navCtrl.push(CadastroTanquePage.name);
     }
 }

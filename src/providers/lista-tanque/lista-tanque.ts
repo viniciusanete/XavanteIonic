@@ -14,7 +14,7 @@ export class ListaTanqueProvider {
   }
 
   listaMedicao(){
-    return this._http.get(this._Url+"auth/medicao/tipos");
+    return this._http.get(this._Url+"auth/medicao/mapatipos");
   }
 
 }

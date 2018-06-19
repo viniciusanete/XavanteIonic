@@ -17,7 +17,7 @@ export class CadastroArduinoPage {
   public Codigo: Arduino;
   public Tanque: Arduino;
   public Tipo: Arduino;
-  public Ip: Arduino;
+  public ip: Arduino;
   constructor(private _Arduinoservice: ArduiboProvider, private _loadingCtrl: LoadingController,private _alertCtrl: AlertController,private _Tanque: ListaTanqueProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -87,42 +87,39 @@ export class CadastroArduinoPage {
         let loading = this._loadingCtrl.create({
           content: 'Validando informações, aguarde...'
         });
-    
+        //console.log(this.ip);
         loading.present();
-
+        loading.dismiss();
+        
         let dadosArduino = JSON.stringify({
           codigo: this.Codigo,
           tanque: this.Tanque,
           tipo: this.Tipo,
-          ip: this.Ip
+          ip: this.ip
         });
-
+          console.log(dadosArduino);
         let mensagem = '';
         let titulo = '';
         this._Arduinoservice.Arduino(dadosArduino)
     .subscribe(
       (sucess => {
-        loading.dismiss();
         titulo = 'Sucesso';
           mensagem = 'Cadastrado com Sucesso!';
           this._alertCtrl.create({
             title: titulo,
             subTitle: mensagem,
             buttons: [
-              { text: 'Ok' ,                      handler: () => {
+              { text: 'Ok' ,                      
+                handler: () => {
                 this.navCtrl.popToRoot();
               }}
             ]
           }).present();
-
-          //this.navCtrl.setRoot(InicioPanePage.name);
       }), (err => {
         console.log(err);
         loading.dismiss();
           titulo = 'Falha';
           mensagem = 'Ocorreu uma falha. Tente novamente mais tarde!';
-       
-        
         this._alertCtrl.create({
           title: titulo,
           subTitle: mensagem,
@@ -133,6 +130,5 @@ export class CadastroArduinoPage {
 
       })
     );  
-        loading.dismiss();
     }
 }
