@@ -12,7 +12,7 @@ import { Tanque } from '../../models/tanque';
 })
 export class ListaMedicaoPage {
   public id: number;
-  public array: Array<Object>;
+  public array;
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private ListaMedicao: ListaMedicaoProvider,
      private _alertCtrl: AlertController, 
@@ -27,13 +27,6 @@ export class ListaMedicaoPage {
         this.array = res;
         console.log(this.array);
     }, (err) => {
-      this._alertCtrl.create({
-        title: 'Erro',
-        subTitle: 'Erro ao carregar lista de medições!',
-        buttons: [
-          {text: 'Ok'}
-        ]
-      }).present();
       console.log(err);
     });
   }
@@ -42,14 +35,4 @@ export class ListaMedicaoPage {
     this.navCtrl.pop();
     //this.navCtrl.setRoot(PainelPage);
   }
-  DadosMedicao(id) {
-   /* return this.ListaMedicao.listaTanque(id).subscribe(
-      (res) => {
-        this.medicao = res;
-        console.log(res);
-    }, (err) => {
-      console.log(err);
-    });*/
- }
-
 }
