@@ -8,10 +8,12 @@ export class ArduiboProvider {
   private _Url = this._url.urlServer();  
   constructor(public _http: HttpClient,  private _url: UrlServerProvider) {}
     
-     Arduino(dadosArduino){
-        return this._http.post<Arduino>(this._Url+"auth/arduino",(dadosArduino),
-              {
-                headers:  { 'Content-Type': 'application/json', }
-              }).do( res => console.log(res));
+  Arduino(dadosArduino){
+    let options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
       }
+    };
+    return this._http.post(this._Url+"auth/arduino",(dadosArduino), (options));
+  }
 }

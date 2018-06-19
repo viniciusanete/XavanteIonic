@@ -12,6 +12,7 @@ import { PainelPage } from '../painel/painel';
 })
 export class CadastroArduinoPage {
   public tanqueDisponiveis : Tanque[];
+  public tiposDisponiveis : object;
   public Codigo: Arduino;
   public Tanque: Arduino;
   public Tipo: Arduino;
@@ -26,6 +27,21 @@ export class CadastroArduinoPage {
       this._alertCtrl.create({
         title: 'Erro',
         subTitle: 'Erro ao carregar lista de Tanques!',
+        buttons: [
+          {text: 'Ok'}
+        ]
+      }).present();
+      console.log(err);
+    });
+
+    this._Tanque.listaMedicao().subscribe(
+      (res) => {
+        this.tiposDisponiveis = res;
+        console.log(this.tiposDisponiveis);
+    }, (err) => {
+      this._alertCtrl.create({
+        title: 'Erro',
+        subTitle: 'Erro ao carregar lista de Tipos!',
         buttons: [
           {text: 'Ok'}
         ]
@@ -78,8 +94,6 @@ export class CadastroArduinoPage {
           tipo: this.Tipo
         });
 
-        //console.log(dadosArduino);
-
         let mensagem = '';
         let titulo = '';
         this._Arduinoservice.Arduino(dadosArduino)
@@ -114,7 +128,5 @@ export class CadastroArduinoPage {
       })
     );  
         loading.dismiss();
-    
-
-  }
+    }
 }

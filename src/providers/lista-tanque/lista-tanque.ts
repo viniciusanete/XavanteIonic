@@ -13,4 +13,8 @@ export class ListaTanqueProvider {
     return this._http.get<Tanque[]>(this._Url+"auth/tanque/tanques");
   }
 
+  listaMedicao(){
+    return this._http.get(this._Url+"auth/medicao/tipos");
+  }
+
 }

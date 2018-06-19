@@ -1,25 +1,39 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { ListaTanqueProvider } from '../../providers/lista-tanque/lista-tanque';
 import { ListaMedicaoProvider } from '../../providers/lista-medicao/lista-medicao';
 import { PainelPage } from '../painel/painel';
+import { Medicao } from '../../models/medicao';
 @IonicPage()
 @Component({
   selector: 'page-lista-medicao',
   templateUrl: 'lista-medicao.html',
 })
 export class ListaMedicaoPage {
-  public medicao : any[];
+  public dados : Array<Medicao>;
   lista=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private ListaMedicao: ListaMedicaoProvider, 
+  public id: number;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+     private ListaMedicao: ListaMedicaoProvider,
+     private _alertCtrl: AlertController, 
     public modalCtrl: ModalController) {
-    let id = navParams.get('idTanque');
+     this.id = navParams.get('idTanque');
+    }
 
-    this.lista=[
-      {qtde:1000,perc:80.2,valor:1000},
-      {qtde:8500,perc:30.2,valor:2000},
-      {qtde:120,perc:18.2,valor:350.52}
-    ];
+  ionViewDidLoad() {
+    this.ListaMedicao.listaTanque(this.id).subscribe(
+      (res) => {
+        this.dados =  Array.of(res);
+    }, (err) => {
+      this._alertCtrl.create({
+        title: 'Erro',
+        subTitle: 'Erro ao carregar lista de medições!',
+        buttons: [
+          {text: 'Ok'}
+        ]
+      }).present();
+      console.log(err);
+    });
   }
 
   fecharModal(){

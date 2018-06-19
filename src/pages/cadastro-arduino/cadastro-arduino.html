@@ -13,6 +13,7 @@
       <ion-item>
           <ion-label color="primary" stacked>Tipo</ion-label>
           <ion-select [(ngModel)]="Tipo" name="Tipo">
+            <ion-option *ngFor="let tiposDisponivel of tiposDisponiveis" value="{{tiposDisponivel.id}}">{{tiposDisponivel.name}}</ion-option>
             <ion-option value="0">PH</ion-option>
             <ion-option value="1">CLARIDADE</ion-option>
             <ion-option value="2">SALINIDADE</ion-option>

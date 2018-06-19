@@ -19,7 +19,7 @@ export class MyApp {
   rootPage:any = LoginPage.name;
   public verificaLogado:boolean = false;
   public paginas = [ 
-    {titulo: 'Arduino',nomePagina: ArduinoPage.name, icon: 'construct'},
+    {titulo: 'Arduino',nomePagina: ArduinoPage.name, icon: 'build'},
     {titulo: 'Novo Tanque', nomePagina: 'CadastroTanquePage', icone:'beaker' },
     {titulo: 'Lista de Usuários', nomePagina: ListaUsuariosPage.name, icone:'person' },
     {titulo: 'Sair', nomePagina: LoginPage.name, icone:'return-left' }
